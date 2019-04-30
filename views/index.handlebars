@@ -1,7 +1,7 @@
 
 <div class="container">
 
-<h2>Eat The Burger!</h2>
+  <h2>Eat The Burger!</h2>
 
   <div class="row">
     <div class="col-sm-12">
@@ -16,20 +16,13 @@
   <div class="row">
     <div class="col-sm-6">
       <h4>Uneaten Burgers</h4>
-      {{#each burgers}}
-        {{#unless this.devoured}}
-        <div class='uneatenBurgers'>
-          <div class="row">
-            <div class="col-sm-6">
-              {{this.burger_name}}
-            </div>
-            <div class="col-sm-6">
-              {{> burger-block devoured=true}}
-            </div>
-          </div>
-        </div>
-        {{/unless}}
-      {{/each}}
+      <table>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            {{> burger-block}}
+          {{/unless}}
+        {{/each}}
+      </table>
     </div>
 
     <div class="col-sm-6">
@@ -38,6 +31,7 @@
         {{#if this.devoured}}
         <div class='eatenBurgers'>
           <div>
+            {{this.id}}.
             {{this.burger_name}}
           </div>
         </div>
@@ -47,3 +41,4 @@
   </div>
 
 </div>
+

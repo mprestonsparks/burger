@@ -8,16 +8,16 @@ var burger = {
       callback(res);
     });
   },
-  // The variables cols and vals are arrays
+  // Add new entry to burgers table
   create: function(cols, vals, callback) {
     orm.create("burgers", cols, vals, function(res) {
       callback(res);
     });
   },
-  // objColVals is an object specifying columns as object keys with associated values
-  update: function(objColVals, condition, callback) {
-    orm.update("burgers", objColVals, condition, function(res) {
-      callback(res);
+  // Change 'devoured' boolean state
+  update: function (condition, callback) {
+    orm.update('burgers', 'devoured', '1', 'id', condition, function (res) {
+        callback(res);
     });
   }
 };

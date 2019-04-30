@@ -1,7 +1,14 @@
-<ul>
-	{{name}}
 
-	<button class="btn btn-danger btn-sm" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}DEVOUR IT!{{/if}}
-	</button>
-</ul>
+<tr class="table-row">
+	<td>
+		{{this.id}}. {{this.burger_name}}
+	</td>
+	<td>
+		<form action="/burgers/{{this.id}}" method="POST">
+			<button class="change-devour btn btn-danger btn-sm" type="submit"></button>
+		</form>
+	</td>
+</tr>
+
+
+	
