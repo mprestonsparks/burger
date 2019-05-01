@@ -1,0 +1,11 @@
+USE bszuktfplkxa52iq;
+
+CREATE TABLE burgers (
+	id INT AUTO_INCREMENT NOT NULL,
+    description VARCHAR(255),
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
+
+SELECT * FROM burgers;
+    
